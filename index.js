@@ -15,5 +15,10 @@ var myDOM = (function() {
 		return this
 	}
 
+	myDOM.prototype.css = function(key, value) {
+		this.element.style[key] = value
+		return this
+	}
+
 	return myDOM
 })()
