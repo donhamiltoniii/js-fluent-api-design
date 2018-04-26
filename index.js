@@ -2,7 +2,7 @@ var jDonny = (function() {
 	function jDonny(element) {
 		if (element) {
 			if (window === this) {
-				return new _(element)
+				return new jDonny(element)
 			}
 			if (document.querySelectorAll(element).length > 1) {
 				this.element = document.querySelectorAll(element)
@@ -40,6 +40,10 @@ var jDonny = (function() {
 			} else {
 				this.element.style[key] = value
 			}
+			return this
+		},
+		html: function(input) {
+			this.element.innerHTML = input
 			return this
 		},
 	}
