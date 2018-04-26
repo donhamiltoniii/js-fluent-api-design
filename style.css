@@ -7,18 +7,26 @@
 :root {
 	--dark: #343;
 	--green: #34ab56;
+	--highlight: #f0f;
 	--light: #eeeeed;
 	--shadow: rgba(0, 0, 0, 0.5);
+	--shadow-values: 0 1px 2px 0 var(--shadow);
 }
 
 html {
 	color: var(--dark);
 	font: 20px/1.618 sans-serif;
 }
+a {
+}
+a::after {
+	color: var(--highlight);
+	content: '°';
+}
 main .posts {
 	display: grid;
 	grid-gap: 2rem;
-	grid-template-columns: repeat(3, minmax(150px, 1fr));
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 	margin-top: 3rem;
 }
 ol,
@@ -44,14 +52,18 @@ ul {
 .container > header {
 	align-items: center;
 	background-color: var(--light);
+	border-radius: 0 0 5px 5px;
+	box-shadow: var(--shadow-values);
 	display: flex;
 	font-size: 1rem;
 	justify-content: space-between;
 	padding-left: 1rem;
 }
-.container > header nav ul {
-	display: flex;
+.container > header nav {
 	padding-right: 1rem;
+}
+.container > header nav ul {
+	display: none;
 }
 .container > header nav ul li {
 	padding-right: 1rem;
@@ -59,10 +71,25 @@ ul {
 .container > header nav ul li:last-child {
 	padding-right: 0;
 }
+.container > header nav ul li a {
+	color: inherit;
+	text-decoration: none;
+}
+.mainNavCollapse {
+	align-items: center;
+	background-color: var(--dark);
+	border-right: 5px;
+	color: var(--light);
+	display: flex;
+	height: 40px;
+	justify-content: center;
+	width: 40px;
+}
 .post {
 	background-color: var(--light);
 	border-radius: 5px;
-	box-shadow: 0 2px 2px 0 var(--shadow);
+	box-shadow: var(--shadow-values);
+	overflow: hidden;
 }
 .post header,
 .post p,
@@ -82,4 +109,16 @@ ul {
 }
 .post header nav ul li:last-child {
 	margin-right: 0;
+}
+
+@media (min-width: 600px) {
+	.container > header h1 {
+		font-size: 1rem;
+	}
+}
+
+@media (min-width: 1000px) {
+	.container > header nav ul {
+		display: flex;
+	}
 }
