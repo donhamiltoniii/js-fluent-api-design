@@ -4,5 +4,6 @@
 
 ### Current included methods
 
-*   `_gimme` : grabs or creates a DOM element and assigns it to `this.element`
+*   `jDonny`: API constructor
 *   `addClass`: adds single class to `this.element`
+*   `css`: adds a css property and value to element
