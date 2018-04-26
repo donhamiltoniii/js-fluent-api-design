@@ -61,9 +61,17 @@ ul {
 }
 .container > header nav {
 	padding-right: 1rem;
+	position: relative;
 }
 .container > header nav ul {
-	display: none;
+	background-color: var(--light);
+	display: flex;
+	flex-direction: column;
+	padding: 1rem;
+	position: absolute;
+	right: 1rem;
+	top: 40px;
+	width: 130px;
 }
 .container > header nav ul li {
 	padding-right: 1rem;
@@ -78,7 +86,8 @@ ul {
 .mainNavCollapse {
 	align-items: center;
 	background-color: var(--dark);
-	border-right: 5px;
+	border: none;
+	border-radius: 5px 5px 0 0;
 	color: var(--light);
 	display: flex;
 	height: 40px;
@@ -120,5 +129,11 @@ ul {
 @media (min-width: 1000px) {
 	.container > header nav ul {
 		display: flex;
+		flex-direction: row;
+		position: static;
+		width: initial;
+	}
+	.container > header nav button {
+		display: none;
 	}
 }
