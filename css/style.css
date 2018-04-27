@@ -9,7 +9,7 @@
 	--green: #34ab56;
 	--highlight: #f0f;
 	--highlight-transparent: rgba(255, 0, 255, 0.3);
-	--light: #eeeeed;
+	--light: #efe;
 	--shadow: rgba(0, 0, 0, 0.5);
 	--shadow-values: 0 1px 2px 0 var(--shadow);
 }
@@ -117,6 +117,7 @@ ul {
 .post header {
 	background-color: var(--green);
 	color: var(--light);
+	padding-bottom: 0.2rem;
 }
 .post header nav ul {
 	display: flex;
